@@ -1,7 +1,7 @@
-source = awesomplete.js
+source = arobase.js
 
-banner = "// Awesomplete - Lea Verou - MIT license"
-minified = awesomplete.min.js
+banner = "// Arobase - Alexandre Joseph - MIT license"
+minified = arobase.min.js
 
 minify:
 	@echo "Minifying..."
