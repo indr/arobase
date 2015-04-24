@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Arobase by jexhson</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Arobase</h1>
+          <h2>Simple and lightweight email obfuscator library for modern browsers</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/jexhson/arobase/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/jexhson/arobase/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/jexhson/arobase" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h2>
+<a id="arobase" class="anchor" href="#arobase" aria-hidden="true"><span class="octicon octicon-link"></span></a>Arobase</h2>
+
+<p><a href="http://jexhson.github.io/arobase/">http://jexhson.github.io/arobase/</a></p>
+
+<p>Arobase is a simple and lightweight email obfuscator library for modern browsers.</p>
+
+<h2>
+<a id="basic-usage" class="anchor" href="#basic-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic Usage</h2>
+
+<p>Before you try anything, you need to include <code>arobase.min.js</code> in your page, via the usual tags:</p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>arobase.min.js<span class="pl-pds">"</span></span> <span class="pl-e">async</span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
+
+<p>Then you can obfuscate an email address by simply adding a class <code>arobase</code> to an element:</p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">address</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>arobase<span class="pl-pds">"</span></span>&gt;john.doe&lt;/<span class="pl-ent">address</span>&gt;</pre></div>
+
+<p>This will render a clickable email like <code>john.doe@&lt;current_page_domain&gt;</code>.</p>
+
+<h2>
+<a id="options" class="anchor" href="#options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Options</h2>
+
+<p>Options are set using HTML attributes (such as <code>data-host</code>). All options can be
+combined together.</p>
+
+<h3>
+<a id="mailbox" class="anchor" href="#mailbox" aria-hidden="true"><span class="octicon octicon-link"></span></a>Mailbox</h3>
+
+<p>To customize the mailbox (the part before <code>@</code>) just add a <code>data-mailbox</code>. It
+allows you to set a custom text if JavaScript is disable.</p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">address</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>arobase<span class="pl-pds">"</span></span> <span class="pl-e">data-mailbox</span>=<span class="pl-s"><span class="pl-pds">"</span>john.doe<span class="pl-pds">"</span></span>&gt;
+    Oops JS not activated
+&lt;/<span class="pl-ent">address</span>&gt;</pre></div>
+
+<p>This will render as previously.</p>
+
+<h3>
+<a id="domain" class="anchor" href="#domain" aria-hidden="true"><span class="octicon octicon-link"></span></a>Domain</h3>
+
+<p>To set a custom domain (the part just after <code>@</code> but before the last <code>.</code>) just
+add a <code>data-domain</code>.</p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">address</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>arobase<span class="pl-pds">"</span></span> <span class="pl-e">data-domain</span>=<span class="pl-s"><span class="pl-pds">"</span>example<span class="pl-pds">"</span></span>&gt;
+    john.doe
+&lt;/<span class="pl-ent">address</span>&gt;</pre></div>
+
+<p>This will render an email like <code>john.doe@example.&lt;current_tld&gt;</code>.</p>
+
+<p>If current page have not top level domain (like <code>localhost</code>), the dot and the
+tld parts are skipped.</p>
+
+<h3>
+<a id="top-level-domain-tld" class="anchor" href="#top-level-domain-tld" aria-hidden="true"><span class="octicon octicon-link"></span></a>Top level domain (tld)</h3>
+
+<p>To set a custom top level domain (like <code>.com</code> or <code>.net</code>) just add a <code>data-tld</code>.</p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">address</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>arobase<span class="pl-pds">"</span></span> <span class="pl-e">data-tld</span>=<span class="pl-s"><span class="pl-pds">"</span>foo<span class="pl-pds">"</span></span>&gt;john.doe&lt;/<span class="pl-ent">address</span>&gt;</pre></div>
+
+<p>This will render an email like <code>john.doe@&lt;current_domain&gt;.foo</code>.</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>Arobase is released under the MIT License. See <a href="https://github.com/jexhson/arobase/blob/mas">LICENSE</a> file for
+details.</p>
+
+<h2>
+<a id="links" class="anchor" href="#links" aria-hidden="true"><span class="octicon octicon-link"></span></a>Links</h2>
+
+<p>The official site for the library is at <a href="http://jexhson.github.io/arobase/">http://jexhson.github.io/arobase/</a>.</p>
+        </section>
+
+        <footer>
+          Arobase is maintained by <a href="https://github.com/jexhson">jexhson</a><br>
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
