@@ -1,0 +1,18 @@
+{
+  "name": "arobase",
+  "main": [
+    "./arobase.js"
+  ],
+  "version": "1.0.0",
+  "homepage": "https://github.com/jexhson/arobase",
+  "authors": [
+    "Alexandre Joseph <>"
+  ],
+  "description": "Simple and lightweight email obfuscator library for modern browsers",
+  "keywords": [
+    "email",
+    "obfuscator",
+    "lightweight"
+  ],
+  "license": "MIT"
+}

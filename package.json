@@ -1,0 +1,16 @@
+{
+  "name": "arobase",
+  "version": "1.0.0",
+  "description": "http://jexhson.github.io/arobase/",
+  "main": "arobase.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "jexhson/arobase",
+  "author": "Alexandre Joseph",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jexhson/arobase/issues"
+  },
+  "homepage": "https://jexhson.github.io/arobase/"
+}
