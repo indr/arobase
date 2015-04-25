@@ -3,6 +3,10 @@
 http://jexhson.github.io/arobase/
 
 Arobase is a simple and lightweight email obfuscator library for modern browsers.
+It tries to obfuscate email addresses on a web page from bots but keep it
+readable for human: transform characters into HTML numbers and insert random
+padding (non printable characters) between letters. By default it also append
+the page hostname to the address.
 
 
 ## Basic Usage
@@ -20,6 +24,8 @@ Then you can obfuscate an email address by simply adding a class `arobase` to an
 ~~~
 
 This will render a clickable email like `john.doe@<current_page_domain>`.
+
+Arobase is also available via `npm` and `bower`.
 
 ## Options
 
