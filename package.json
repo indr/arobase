@@ -1,6 +1,6 @@
 {
   "name": "arobase",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "http://jexhson.github.io/arobase/",
   "main": "arobase.js",
   "scripts": {

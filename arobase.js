@@ -17,7 +17,7 @@ var _ = function (input, options) {
     options = options || {};
     configure.call(this, {
         mailbox: this.input.innerHTML,
-        domain: host_parts.slice(0, host_parts.length).join('.'),
+        domain: host_parts.slice(-2)[0],
         tld: host_parts.length > 1 ? host_parts.slice(-1)[0] : null
     }, options);
 
