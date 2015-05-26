@@ -120,7 +120,7 @@ $.random_padding = function () {
 };
 
 $.offuscate_letter = function (letter) {
-    return $.random_padding() + '&#' + String.charCodeAt(letter) + ';';
+    return $.random_padding() + '&#' + letter.charCodeAt(0) + ';';
 };
 
 $.offuscate_word = function (word) {
